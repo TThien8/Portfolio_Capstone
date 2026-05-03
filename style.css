@@ -1,35 +1,45 @@
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background: #f9f9f9;
+    background-color: #f4f4f4;
 }
 
 nav {
     background: #2e4a31;
     color: white;
     padding: 15px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .nav-links {
     list-style: none;
     padding: 0;
+    display: flex;
+    margin: 0;
 }
 
 .nav-links li {
-    display: inline;
-    margin: 0 10px;
+    margin-left: 20px;
 }
 
 .nav-links a {
     color: #ccc;
     text-decoration: none;
+    font-weight: bold;
 }
 
 .nav-links a.active {
     color: white;
     border-bottom: 2px solid white;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: white;
 }
 
 .gallery {
@@ -41,8 +51,10 @@ nav {
 
 .photo-item img {
     width: 100%;
+    height: auto;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
 }
 
 .content-page {
@@ -51,17 +63,23 @@ nav {
     margin: 0 auto;
 }
 
-@media screen and (min-width: 772px) {
-    nav {
-        display: flex;
-        justify-content: space-between;
-        padding: 15px 50px;
-    }
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+}
 
+@media screen and (min-width: 772px) {
     .gallery {
         display: grid;
         grid-template-columns: 1fr 1fr;
         max-width: 1000px;
         margin: 0 auto;
+    }
+
+    .photo-item img:hover {
+        transform: scale(1.03);
+        cursor: pointer;
     }
 }
